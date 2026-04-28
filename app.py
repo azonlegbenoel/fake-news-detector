@@ -42,6 +42,17 @@ st.markdown("""
     background: linear-gradient(135deg, #0a0e1a 0%, #0d1117 50%, #0f1923 100%); 
 }
 
+/* Cacher la flèche de la sidebar */
+button[data-testid="collapsedControl"] {
+    visibility: hidden !important;
+    display: none !important;
+}
+
+/* Forcer la sidebar à rester visible */
+section[data-testid="stSidebar"] {
+    display: block !important;
+}
+
 .main-header {
     text-align: center;
     padding: 2rem 1rem;
@@ -121,58 +132,6 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==============================
-# Gestion de la Sidebar
-# ==============================
-
-# Initialiser l'état de la sidebar
-if 'sidebar_open' not in st.session_state:
-    st.session_state.sidebar_open = False
-
-# Initialiser les valeurs par défaut
-if 'model_choice' not in st.session_state:
-    st.session_state.model_choice = "🤖 DistilBERT (Précis)"
-
-# Bouton pour ouvrir la sidebar (toujours visible en haut à gauche)
-if not st.session_state.sidebar_open:
-    st.markdown("""
-    <button class="settings-btn" onclick="
-        var sidebar = parent.document.querySelector('[data-testid=\"stSidebar\"]');
-        if (sidebar) sidebar.style.display = 'block';
-    ">
-        ⚙️ Paramètres
-    </button>
-    """, unsafe_allow_html=True)
-    
-# Panneau de la sidebar
-if st.session_state.sidebar_open:
-    # Overlay de fond
-    st.markdown('<div class="sidebar-overlay" id="sidebar-overlay"></div>', unsafe_allow_html=True)
-    
-    # Contenu de la sidebar
-    st.markdown("""
-    <div class="custom-sidebar" id="custom-sidebar">
-        <button class="close-sidebar-btn" id="close-sidebar-btn">✕</button>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    # Utiliser un conteneur Streamlit pour le contenu
-    with st.sidebar:
-        # Ce contenu ne sera pas visible car la sidebar native est cachée
-        pass
-    
-    # Afficher le contenu directement dans la page avec un markdown positionné
-    st.markdown("""
-    <div style='
-        position: fixed;
-        top: 80px;
-        left: 25px;
-        width: 310px;
-        z-index: 9999;
-        color: white;
-    '>
-    """, unsafe_allow_html=True)
-
-# ==============================
 # Chargement des modèles
 # ==============================
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -192,7 +151,6 @@ def load_svm_model():
 def load_bert_model():
     """Charge le modèle BERT - utilise DistilBERT de base si pas de modèle fine-tuné"""
     try:
-        # Essayer de charger le modèle fine-tuné
         if os.path.exists('data/bert_model/pytorch_model.bin') or os.path.exists('data/bert_model/model.safetensors'):
             tokenizer = DistilBertTokenizer.from_pretrained('data/bert_model')
             model = DistilBertForSequenceClassification.from_pretrained('data/bert_model').to(DEVICE)
@@ -201,7 +159,6 @@ def load_bert_model():
         else:
             raise FileNotFoundError("Modèle fine-tuné non trouvé")
     except:
-        # Fallback : utiliser le modèle DistilBERT de base (non fine-tuné)
         model_name = 'distilbert-base-uncased'
         tokenizer = DistilBertTokenizer.from_pretrained(model_name)
         model = DistilBertForSequenceClassification.from_pretrained(model_name, num_labels=2).to(DEVICE)
@@ -442,14 +399,12 @@ if analyze_btn:
         st.markdown("---")
         st.markdown("<h2 style='text-align: center; color: white;'>📊 Analyse du Texte Soumis</h2>", unsafe_allow_html=True)
         
-        # Nettoyer le texte pour l'analyse
         cleaned = clean_text(article_text)
         words = cleaned.split()
         
         if len(words) < 10:
             st.warning("⚠️ Texte trop court pour une analyse détaillée (minimum 10 mots après nettoyage).")
         else:
-            # Créer les onglets
             tab1, tab2, tab3 = st.tabs(["☁️ Nuage de Mots", "📊 Top Mots", "📏 Statistiques"])
             
             with tab1:
