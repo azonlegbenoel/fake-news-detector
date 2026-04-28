@@ -3,10 +3,15 @@
 <div align="center">
 
 !\[Python](https://img.shields.io/badge/Python-3.10+-blue?style=for-the-badge\&logo=python)
+
 !\[Streamlit](https://img.shields.io/badge/Streamlit-1.28-FF4B4B?style=for-the-badge\&logo=streamlit)
+
 !\[PyTorch](https://img.shields.io/badge/PyTorch-2.0-EE4C2C?style=for-the-badge\&logo=pytorch)
+
 !\[Transformers](https://img.shields.io/badge/🤗\_Transformers-4.31-FFD21E?style=for-the-badge)
+
 !\[Scikit-learn](https://img.shields.io/badge/scikit--learn-1.3-F7931E?style=for-the-badge\&logo=scikit-learn)
+
 !\[License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 **Détection automatique de fausses informations par Intelligence Artificielle (NLP)**
