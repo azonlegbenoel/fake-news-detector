@@ -317,6 +317,7 @@ fake-news-detector/
 ├── 📄 .gitignore                      # Fichiers ignorés par Git
 ├── 📓 Fake_News_Detector_ENEAM.ipynb  # Notebook complet (EDA + Modèles)
 ├── 📊 Rapport_Projet8_NLP_AZONLEGBE.pdf  # Rapport détaillé du projet
+├── 📊 Presentation_live.pptx # Courte présentation (slides)
 │
 ├── 📁 data/
 │   ├── 📦 tfidf_vectorizer.pkl        # Modèle TF-IDF sauvegardé
