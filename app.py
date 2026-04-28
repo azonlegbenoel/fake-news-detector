@@ -34,29 +34,36 @@ st.set_page_config(
 # ==============================
 st.markdown("""
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;600;700&display=swap');
 
 * { font-family: 'Space Grotesk', sans-serif !important; }
 
-.stApp { background: linear-gradient(135deg, #0a0e1a 0%, #0d1117 50%, #0f1923 100%); }
+.stApp { 
+    background: linear-gradient(135deg, #0a0e1a 0%, #0d1117 50%, #0f1923 100%); 
+}
 
 .main-header {
     text-align: center;
-    padding: 2.5rem 1rem;
+    padding: 2rem 1rem;
     background: linear-gradient(135deg, rgba(255,71,87,0.12) 0%, rgba(46,213,115,0.08) 100%);
     border-radius: 20px;
     border: 1px solid rgba(255,255,255,0.08);
     margin-bottom: 2rem;
 }
+
 .main-header h1 {
-    font-size: 3rem !important;
+    font-size: 2.5rem !important;
     font-weight: 700;
     background: linear-gradient(135deg, #ff4757 30%, #2ed573 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
-.main-header p { color: #8892b0; font-size: 1.1rem; }
+
+.main-header p { 
+    color: #8892b0; 
+    font-size: 1rem; 
+}
 
 .result-card {
     padding: 2rem;
@@ -64,20 +71,28 @@ st.markdown("""
     text-align: center;
     margin: 1.5rem 0;
     border: 2px solid;
-    backdrop-filter: blur(10px);
 }
+
 .result-fake {
     background: rgba(255, 71, 87, 0.1);
     border-color: #ff4757;
-    box-shadow: 0 0 40px rgba(255,71,87,0.2);
 }
+
 .result-real {
     background: rgba(46, 213, 115, 0.1);
     border-color: #2ed573;
-    box-shadow: 0 0 40px rgba(46,213,115,0.2);
 }
-.result-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-.result-subtitle { font-size: 1rem; color: #8892b0; }
+
+.result-title { 
+    font-size: 2rem; 
+    font-weight: 700; 
+    margin-bottom: 0.5rem; 
+}
+
+.result-subtitle { 
+    font-size: 1rem; 
+    color: #8892b0; 
+}
 
 .metric-card {
     background: rgba(255,255,255,0.04);
@@ -86,6 +101,7 @@ st.markdown("""
     padding: 1.2rem;
     text-align: center;
 }
+
 .stTextArea textarea {
     background: rgba(255,255,255,0.05) !important;
     border: 1px solid rgba(255,255,255,0.15) !important;
@@ -93,17 +109,7 @@ st.markdown("""
     color: white !important;
     font-size: 1rem !important;
 }
-div[data-testid="stButton"] > button {
-    background: linear-gradient(135deg, #ff4757, #c0392b) !important;
-    color: white !important;
-    border: none !important;
-    border-radius: 10px !important;
-    padding: 0.7rem 2rem !important;
-    font-size: 1.1rem !important;
-    font-weight: 600 !important;
-    width: 100% !important;
-    transition: all 0.3s !important;
-}
+
 .sidebar-section {
     background: rgba(255,255,255,0.04);
     border-radius: 12px;
