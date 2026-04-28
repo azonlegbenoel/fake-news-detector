@@ -267,7 +267,7 @@ wordcloud>=1.9.3      # Nuages de mots
 Le notebook complet est disponible : `Fake\_News\_Detector\_ENEAM.ipynb`
 
 ```bash
-jupyter notebook Fake\_News\_Detector\_ENEAM.ipynb
+jupyter notebook Fake_News_Detector_ENEAM.ipynb
 ```
 
 Il contient :
@@ -315,25 +315,25 @@ fake-news-detector/
 ├── 📄 requirements.txt                # Dépendances Python
 ├── 📄 README.md                       # Documentation du projet
 ├── 📄 .gitignore                      # Fichiers ignorés par Git
-├── 📓 Fake\_News\_Detector\_ENEAM.ipynb  # Notebook complet (EDA + Modèles)
-├── 📊 Rapport\_Projet8\_NLP\_AZONLEGBE.pdf  # Rapport détaillé du projet
+├── 📓 Fake_News_Detector_ENEAM.ipynb  # Notebook complet (EDA + Modèles)
+├── 📊 Rapport_Projet8_NLP_AZONLEGBE.pdf  # Rapport détaillé du projet
 │
 ├── 📁 data/
-│   ├── 📦 tfidf\_vectorizer.pkl        # Modèle TF-IDF sauvegardé
-│   └── 📦 svm\_model.pkl              # Modèle Linear SVM sauvegardé
+│   ├── 📦 tfidf_vectorizer.pkl        # Modèle TF-IDF sauvegardé
+│   └── 📦 svm_model.pkl              # Modèle Linear SVM sauvegardé
 │   
 │
 └── 📁 visualizations/                 # Graphiques générés
-    ├── 📊 fig\_distribution.png        # Distribution des classes
-    ├── 📊 fig\_subjects.png           # Répartition par sujet
-    ├── 📊 fig\_lengths.png            # Distribution des longueurs
-    ├── 📊 fig\_wordcloud.png          # Nuages de mots
-    ├── 📊 fig\_topwords.png           # Top mots fréquents
-    ├── 📊 fig\_svm\_eval.png           # Évaluation SVM
-    ├── 📊 fig\_bert\_training.png      # Courbes d'entraînement BERT
-    ├── 📊 fig\_comparison.png         # Comparaison des modèles
-    ├── 📊 fig\_confusion\_both.png     # Matrices de confusion
-    └── 📊 fig\_roc\_comparison.png     # Courbes ROC
+    ├── 📊 fig_distribution.png        # Distribution des classes
+    ├── 📊 fig_subjects.png           # Répartition par sujet
+    ├── 📊 fig_lengths.png            # Distribution des longueurs
+    ├── 📊 fig_wordcloud.png          # Nuages de mots
+    ├── 📊 fig_topwords.png           # Top mots fréquents
+    ├── 📊 fig_svm_eval.png           # Évaluation SVM
+    ├── 📊 fig_bert_training.png      # Courbes d'entraînement BERT
+    ├── 📊 fig_comparison.png         # Comparaison des modèles
+    ├── 📊 fig_confusion_both.png     # Matrices de confusion
+    └── 📊 fig_roc_comparison.png     # Courbes ROC
 ```
 
 ---
