@@ -237,7 +237,7 @@ with st.sidebar:
     st.markdown("</div>", unsafe_allow_html=True)
 
     st.markdown("<div class='sidebar-section'>", unsafe_allow_html=True)
-    st.markdown("## 📊 À Propos du Projet")
+    st.markdown("## 📊 À Propos du Projet (Inputs en anglais pour de meilleurs resultats)")
     st.markdown("""
     **AZONLEGBE Noël Junior Azonou - Projet 8 — NLP 2026**  
     ISE3 ENEAM
@@ -270,7 +270,7 @@ st.markdown("""
 <div class='main-header'>
     <h1>🛡️ Fake News Detector</h1>
     <p>Détection automatique de fausses informations par intelligence artificielle (NLP)</p>
-    <p style='font-size:0.85rem; margin-top:0.5rem; color:#555;'>AZONLEGBE Noël · Projet 8 · ISE3 ENEAM · NLP 2026</p>
+    <p style='font-size:0.85rem; margin-top:0.5rem; color:#555;'>AZONLEGBE Noël Junior Azonsou · Projet 8 · ISE3 ENEAM · NLP 2026</p>
 </div>
 """, unsafe_allow_html=True)
 
@@ -495,6 +495,6 @@ if analyze_btn:
 st.markdown("---")
 st.markdown("""
 <p style='text-align:center; color:#555; font-size:0.85rem;'>
-🛡️ Fake News Detector · Groupe 8 · NLP 2026 · ISE3 ENEAM
+🛡️ Fake News Detector · AZONLEGBE Noël Junior Azonsou · Projet 8 · NLP 2026 · ISE3 ENEAM
 </p>
 """, unsafe_allow_html=True)
