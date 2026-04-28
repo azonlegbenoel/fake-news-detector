@@ -121,6 +121,58 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ==============================
+# Gestion de la Sidebar
+# ==============================
+
+# Initialiser l'état de la sidebar
+if 'sidebar_open' not in st.session_state:
+    st.session_state.sidebar_open = False
+
+# Initialiser les valeurs par défaut
+if 'model_choice' not in st.session_state:
+    st.session_state.model_choice = "🤖 DistilBERT (Précis)"
+
+# Bouton pour ouvrir la sidebar (toujours visible en haut à gauche)
+if not st.session_state.sidebar_open:
+    st.markdown("""
+    <button class="settings-btn" onclick="
+        var sidebar = parent.document.querySelector('[data-testid=\"stSidebar\"]');
+        if (sidebar) sidebar.style.display = 'block';
+    ">
+        ⚙️ Paramètres
+    </button>
+    """, unsafe_allow_html=True)
+    
+# Panneau de la sidebar
+if st.session_state.sidebar_open:
+    # Overlay de fond
+    st.markdown('<div class="sidebar-overlay" id="sidebar-overlay"></div>', unsafe_allow_html=True)
+    
+    # Contenu de la sidebar
+    st.markdown("""
+    <div class="custom-sidebar" id="custom-sidebar">
+        <button class="close-sidebar-btn" id="close-sidebar-btn">✕</button>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Utiliser un conteneur Streamlit pour le contenu
+    with st.sidebar:
+        # Ce contenu ne sera pas visible car la sidebar native est cachée
+        pass
+    
+    # Afficher le contenu directement dans la page avec un markdown positionné
+    st.markdown("""
+    <div style='
+        position: fixed;
+        top: 80px;
+        left: 25px;
+        width: 310px;
+        z-index: 9999;
+        color: white;
+    '>
+    """, unsafe_allow_html=True)
+
+# ==============================
 # Chargement des modèles
 # ==============================
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
